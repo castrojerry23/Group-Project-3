@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn init
+  /usr/local/bin/node /usr/local/bin/yarn add prop-types
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -14,17 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: canceled
-      at Interface.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:136882:13)
-      at Interface.emit (events.js:210:5)
-      at Interface._ttyWrite (readline.js:887:16)
-      at ReadStream.onkeypress (readline.js:191:10)
-      at ReadStream.emit (events.js:210:5)
-      at emitKeys (internal/readline/utils.js:433:14)
-      at emitKeys.next (<anonymous>)
-      at ReadStream.onData (readline.js:1153:36)
-      at ReadStream.emit (events.js:210:5)
-      at addChunk (_stream_readable.js:308:12)
+  Error: EACCES: permission denied, mkdir '/Users/santiagot-z/Group-Project-3/node_modules/eslint-plugin-import/node_modules/doctrine'
 
 npm manifest: 
   {
