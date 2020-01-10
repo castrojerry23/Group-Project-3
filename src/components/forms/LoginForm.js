@@ -14,8 +14,9 @@ class LoginForm extends React.Component {
         errors: {}
     };
 
-    onChange = e => this.setState({
-        data: {...this.state.data, [e.target.name]: e.target.value}
+    onChange = e => 
+        this.setState({
+        data: { ...this.state.data, [e.target.name]: e.target.value }
     });
 
     // validate data, pass it to submit function, and handle errors
@@ -26,34 +27,36 @@ class LoginForm extends React.Component {
             this.setState({ loading: true });
             this.props
                 .submit(this.state.data)
-                .catch(err => this.setState({ errors: err.response.data.errors, loading: false })
+                .catch(err => 
+                    this.setState({ errors: err.response.data.errors, loading: false })
                 );
         }
     };
 
-    validate = (data) => {
+    validate = data => {
         const errors = {};
         if (!Validator.isEmail(data.email)) errors.email = "Invalid Email";
         if (!data.password) errors.password = "Cannot leave this blank";
         return errors;
-    }
+    };
 
 
     render() {
-        const { data, errors, loading } = this.state
+        const { data, errors, loading } = this.state;
         return (
             <Form onSubmit={this.onSubmit} loading={loading}>
-                { errors.global && <Message negative>
+                {errors.global && (
+                <Message negative>
                     <Message.Header>Something went wrong.</Message.Header>
                     <p>{errors.global}</p>
-                    </Message>}
+                    </Message>)}
                 <Form.Field error={!!errors.email}>
                     <label htmlFor="email">Email</label>
                     <input 
                     type="email" 
                     id="email" 
                     name="email" 
-                    placeholder="example@email.com"
+                    placeholder="example@example.com"
                     value={data.email} 
                     onChange={this.onChange}
                     />
