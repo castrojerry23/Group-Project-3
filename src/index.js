@@ -1,34 +1,69 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from "react-router-dom";
-// import "semantic-ui-css/semantic.min.css";
-import { createStore, applyMiddleware } from 'redux'; 
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import rootReducer from './rootReducer';
-import { userLoggedIn } from './actions/auth';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import ApolloClient, { createNetworkInterface } from 'apollo-client';
+import { ApolloProvider } from 'react-apollo';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { reducer as formReducer } from 'redux-form';
+
+import { AUTH_SIGNIN } from './actions';
+import authReducer from './reducers/authReducer';
+import RequireAuth from './containers/RequireAuth';
+import App from './components/App';
+import NoMatch from './components/NoMatch';
+import HomePageContainer from './containers/HomePageContainer';
+import SignUpPage from './components/SignUpPage';
+import SignInPage from './components/SignInPage';
+import DashboardPageContainer from './containers/DashboardPageContainer';
+
+const token = localStorage.getItem('token');
+const networkInterface = createNetworkInterface({ uri: 'http://localhost:4000/graphql' });
+
+networkInterface.use([{
+  applyMiddleware(req, next) {
+    if (!req.options.headers) {
+      req.options.headers = {};
+    }
+
+    req.options.headers.token = token ? token : null;
+    next();
+  }
+}]);
+
+const client = new ApolloClient({
+  networkInterface
+});
 
 const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(thunk))
+    combineReducers({
+        apollo: client.reducer(),
+        form: formReducer,
+        auth: authReducer,
+      }),
+      {}, // initial state
+      compose(
+          applyMiddleware(client.middleware()),
+          // If you are using the devToolsExtension, you can add it here also
+          window.devToolsExtension ? window.devToolsExtension() : f => f,
+      )
 );
 
-if (localStorage.movieJWT) {
-    const user = { token: localStorage.movieJWT };
-    store.dispatch(userLoggedIn(user));
+if (token) {
+    store.dispatch({ type: AUTH_SIGNIN});
 }
 
 ReactDOM.render(
-    <BrowserRouter> 
-        <Provider store={store}>
-            <Route component={App} />
-        </Provider>
-    </BrowserRouter>,  
-    document.getElementById('root')
+    <ApolloProvider store={store} client={client}>
+        <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
+        <Route path="/" component={App}>
+            <IndexRoute component={HomePageContainer} />
+            <Route path="signup" component={SignUpPage} />
+            <Route path="signin" component={SignInPage} />
+            <Route path="dashboard" component={RequireAuth(DashboardPageContainer)} />
+            <Route path="*" component={NoMatch} />
+        </Route>
+        </Router>
+    </ApolloProvider>,    
+  document.getElementById('root')
 );
 
-serviceWorker.unregister();

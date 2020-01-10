@@ -11,43 +11,41 @@ class SignupForm extends React.Component {
             password: ""
         },
         loading: false,
-        errors: {}
+        errors: {
+            email: '',
+            password: '',
+        },
     };
 
   onChange = e =>
     this.setState({
-      ...this.state,
-      data: { ...this.state.data, [e.target.name]: e.target.value }
+      errors: { email: '', password: '' },
+      data: { ...this.state.data, [e.target.name]: e.target.value },
     });
 
-  onSubmit = e => {
+  onSubmit = async e => {
     e.preventDefault();
-    const errors = this.validate(this.state.data);
+    const errors = await this.validate(this.state.data);
     this.setState({ errors });
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
-      this.props
-        .submit(this.state.data)
-        .catch(err =>
-          this.setState({ errors: err.response.data.errors, loading: false })
-        );
+      this.props.submit(this.state.data);
     }
   };
 
   validate = data => {
       const errors = {};
-
       if (!isEmail(data.email)) errors.email = "Invalid email";
+    //   if (email === database.email) errors.email = 'This email is already taken';
       if (!data.password) errors.password = "Cannot be blank";
       return errors;
   };
 
     render() {
         const { data, errors, loading } = this.state;
-
         return (
             <Form onSubmit={this.onSubmit} loading={loading}>
-                <Form.Field error={!!errors.email}>
+                <Form.Field error={errors && errors.email}>
                     <label htmlFor="email">Email</label>
                     <input
                         type="email"
