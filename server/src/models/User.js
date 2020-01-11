@@ -1,49 +1,14 @@
-import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import uniqueValidator from 'mongoose-unique-validator';
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-// still need to add uniquenss and email validation to email field
+const userSchema = new Schema({
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now }
+});
 
-const schema = new mongoose.Schema(
-    {
-    email: {
-        type: String,
-        required: true,
-        lowercase: true,
-        index: true,
-        unique: true
-    },
-    passwordHash: { type: String, required: true },
-    confirmed: { type: Boolean, default: false }
-    },
-    { timestamps: true}
-);
+const User = mongoose.model('User', userSchema);
 
-schema.methods.isValidPassword = function isValidPassword(password) {
-    return bcrypt.compareSync(password, this.passwordHash);
-};
-
-schema.methods.setPassword = function setPassword(password) {
-    this.passwordHash = bcrypt.hashSync(password, 10);
-};
-
-schema.methods.generateJWT = function generateJWT() {
-    return jwt.sign({
-        email: this.email
-    }, 
-    process.env.JWT_SECRET
-    );
-};
-
-schema.methods.toAuthJSON = function toAuthJSON() {
-    return {
-        email: this.email,
-        confirmed: this.confirmed,
-        token: this.generateJWT()
-    };
-};
-
-schema.plugin(uniqueValidator, { message: "This email is already taken."});
-
-export default mongoose.model('User', schema);
+module.exports = User;
