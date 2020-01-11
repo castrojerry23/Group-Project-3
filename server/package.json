@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0",
+    "supertest": "^2.0.1"
+  },
+  "dependencies": {
+    "apollo-server": "^0.3.3",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "graphql": "^0.8.0",
+    "graphql-tools": "^0.8.1",
+    "jsonwebtoken": "^7.2.1",
+    "mongoose": "^4.6.7",
+    "validator": "^6.2.0"
+  }
+}
