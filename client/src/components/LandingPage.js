@@ -72,6 +72,10 @@ class LandingPage extends Component {
   // };
 
   render() {
+    let styles = {
+      width: '500px',
+    };
+
     return (
       <Container fluid>
         <Row>
@@ -105,6 +109,9 @@ class LandingPage extends Component {
                           <div class="col-md-10">
                               <h4>{movie.name}</h4>
                           </div>
+                          <div class="col-md-10">
+                              <img src={movie.picture} alt={movie.id} style={styles}></img>
+                          </div>
                           {/* <div class="col-sm-1">
                               <ViewBtn>{movie.link}</ViewBtn>
                           </div>
@@ -120,7 +127,7 @@ class LandingPage extends Component {
                       {movie.locations.map(location => (
                         <div class="form-group row">
                             <div class="col-md-10">
-                                <h6>{location.display_name}</h6>
+                                <img src={location.icon} alt={location.id}></img>
                             </div>
                         </div>
                       ))}
