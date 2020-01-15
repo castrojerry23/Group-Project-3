@@ -7,6 +7,8 @@ import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
 import API from "../utils/API";
 
+import './Components.css';
+
 class LandingPage extends Component {
   // Initialize this.state.streams as an empty array
   state = {
@@ -81,10 +83,10 @@ class LandingPage extends Component {
         <Row>
         <Col size="md-12 sm-12">
           <Jumbotron>
-            <h1>Welcome to Flix Finder</h1>
+            <p className="appTitle">Welcome to Flix Finder</p>
           </Jumbotron>
-          <div class="card">
-            <div class="card-body">
+          <div className="card" id="landingCard1">
+            <div className="card-body">
               Search by Movie or TV Show Title
               <form>
               <Input
@@ -97,16 +99,17 @@ class LandingPage extends Component {
               </form>
             </div>
           </div>
-          <div class="card">
-            <div class="card-body">
-              Results
+          <div className="card" id="landingCard2">
+            <div className="card-body">
+
+              <h3>Results</h3>
 
               {this.state.movies.length ? (
                 <List>
                   {this.state.movies.map(movie => (
                     <ListItem key={movie.id}>
-                      <div class="form-group row">
-                          <div class="col-md-10">
+                      <div className="form-group row">
+                          <div className="col-md-10">
                               <h4>{movie.name}</h4>
                           </div>
                           <div class="col-md-10">
@@ -115,13 +118,13 @@ class LandingPage extends Component {
                           {/* <div class="col-sm-1">
                               <ViewBtn>{movie.link}</ViewBtn>
                           </div>
-                          <div class="col-sm-0">
+                          <div className="col-sm-0">
                               <SaveBtn onClick={() => this.handleSaveClick(movie._id)} />
                           </div> */}
                       </div>
-                      <div class="form-group row">
-                        <div class="col-md-10">
-                            <h6>Streaming On:</h6>
+                      <div className="form-group row">
+                        <div className="col-md-10">
+                            <h5>Streaming On:</h5>
                         </div>
                       </div>
                       {movie.locations.map(location => (
@@ -135,7 +138,7 @@ class LandingPage extends Component {
                   ))}
                 </List>
               ) : (
-                <h6>No Results to Display</h6>
+                <h5>No Results to Display</h5>
               )}
             </div>
           </div>

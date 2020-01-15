@@ -13,7 +13,7 @@ export default (props) => {
         <div className="nav navbar-nav">
           <Link to="/" className="nav-item nav-link">Home</Link>
         </div>
-        <div className="nav navbar-nav float-xs-right">
+        <div className="nav navbar-nav">
           <Link to="#" onClick={logout} className="nav-item nav-link">Logout</Link>
         </div>
       </div>
@@ -22,7 +22,7 @@ export default (props) => {
         <div className="nav navbar-nav">
           <Link to="/" className="nav-item nav-link">Home</Link>
         </div>
-        <div className="nav navbar-nav float-xs-right">
+        <div className="nav navbar-nav">
           <Link to="/signin" className="nav-item nav-link">Sign in</Link>
           <Link to="/signup" className="nav-item nav-link">Sign up</Link>
         </div>
@@ -30,7 +30,7 @@ export default (props) => {
     );
 
   return (
-    <nav className="navbar navbar-light bg-faded mb-3">
+    <nav className="navbar navbar-light">
       <div className="container">
         <div className="row">
           <div className="col-md-12">{links}</div>
