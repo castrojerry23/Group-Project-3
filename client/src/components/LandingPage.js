@@ -6,6 +6,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
 import API from "../utils/API";
+import './LandingPage.css';
 
 class LandingPage extends Component {
   // Initialize this.state.streams as an empty array
