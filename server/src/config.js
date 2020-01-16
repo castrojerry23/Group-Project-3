@@ -6,7 +6,7 @@ module.exports = {
     database: {
       host: 'localhost',
       port: 27017,
-      name: 'react_auth_app_example'
+      name: 'react_auth_app'
     },
     auth: {
       secret: 'super_secret_word', // CHANGE IT!
