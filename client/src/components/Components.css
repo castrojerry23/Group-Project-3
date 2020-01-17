@@ -17,68 +17,12 @@ body {
 }
 
 .appTitle {
-    font-size:10vw;
-    height: 100px;
-    position: relative;
-    top: -80px;
-    color: rgb(0, 158, 163);
+    font-family: fantasy;
+    border-radius: 25px;
+    font-size: 9em;
+    background: url(../Images/backgroundimage2.jpg);
 }
 
 .jumbotron {
-    background-color: #FFFFFA;
-    border: rgb(143, 143, 143);
-    border-style: groove;
-}
-
-.searchForm {
-    width: 400px;
-    text-align: center;
-    display: inline-block;
-    font-size: 18pt;
-}
-
-/* .searchBar {
-    display: inline;
-} */
-
-.searchBar input{
-    width: 40vw;
-    display: inline-block;
-}
-
-/* .btn btn-success {
-    background-color: black;
-}
-.searchButton {
-    background-color: black;
-
-} */
-
-
-
-/* navbar */
-.navbar-light .navbar-nav .nav-link {
-    color: rgb(255, 255, 255);
-}
-.navbar-light:hover .navbar-nav:hover .nav-link:hover {
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 158, 163);
-}
-.navbar-light .navbar-nav .nav-link {
-    /* color: rgb(255, 255, 255); */
-}
-.nav, .navbar-nav{
-    float: left;
-    /* display: inline-block; */
-
-}
-
-/* signup page */
-
-.signupform {
-    color: rgb(0, 158, 163);
-}
-
-.signuptext {
-    color: rgb(255, 255, 255);
+    background: url(../Images/backgroundimage1.jpg);
 }
