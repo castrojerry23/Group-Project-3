@@ -1,11 +1,19 @@
+body {
+    text-align: center;
+    background: url(../Images/backgroundimage1.jpg);
+
+}
+
 /* Landing page */
 
 #landingCard1 {
-    background-color: aquamarine;
+    background-color: rgb(0, 158, 163);
+
 }
 
 #landingCard2 {
-    background-color: rgb(207, 74, 21);
+    background-color: rgb(0, 158, 163);
+    text-align: left;
 }
 
 .appTitle {
@@ -17,4 +25,26 @@
 
 .jumbotron {
     background: url(../Images/backgroundimage1.jpg);
+    margin-bottom: 50px;
+}
+
+.searchForm {
+    width: 400px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18pt;
+}
+
+.searchBar input{
+    width: 40vw;
+    display: inline-block;
+}
+
+#profilepage {
+    background: url(../Images/backgroundimage2.jpg);
+ 
+}
+
+#savedmovies {
+    background-color: #ed6859;
 }

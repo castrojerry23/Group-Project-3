@@ -83,17 +83,17 @@ class LandingPage extends Component {
         <Row>
         <Col size="md-12 sm-12">
           <Jumbotron>
-            <p className="appTitle">Welcome to Flix Finder</p>
+            <p className="appTitle">Flix Finder</p>
           </Jumbotron>
           <div className="card" id="landingCard1">
             <div className="card-body">
-              Search by Movie or TV Show Title
-              <form>
+            <p className="searchForm">Find some Flix: </p>
+              <form className="searchBar">
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Title"
+                placeholder="Search for ..."
               />
               <FormBtn onClick={this.handleFormSubmit}>Search</FormBtn>
               </form>
@@ -112,7 +112,7 @@ class LandingPage extends Component {
                           <div className="col-md-10">
                               <h4>{movie.name}</h4>
                           </div>
-                          <div class="col-md-10">
+                          <div class="col-md-10" id="results2">
                               <img src={movie.picture} alt={movie.id} style={styles}></img>
                           </div>
                           {/* <div class="col-sm-1">
@@ -128,7 +128,7 @@ class LandingPage extends Component {
                         </div>
                       </div>
                       {movie.locations.map(location => (
-                        <div class="form-group row">
+                        <div class="form-group row" >
                             <div class="col-md-10">
                                 <img src={location.icon} alt={location.id}></img>
                             </div>
@@ -138,7 +138,7 @@ class LandingPage extends Component {
                   ))}
                 </List>
               ) : (
-                <h5>No Results to Display</h5>
+                <h5>Nothing yet</h5>
               )}
             </div>
           </div>

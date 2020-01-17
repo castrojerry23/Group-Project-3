@@ -7,6 +7,9 @@ import { connect } from 'react-redux';
 import SignUpForm from '../components/SignUpForm';
 import { signIn } from '../actions';
 
+import '../components/Components.css';
+
+
 class SignUpFormContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -41,9 +44,9 @@ class SignUpFormContainer extends React.Component {
 }
 
 const signUpMutation = gql`
-  mutation signUp($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
+  mutation signUp(
+    $lastName: String!, $email: String!, $password: String!) {
     signUp(
-      firstName: $firstName
       lastName: $lastName
       email: $email
       password: $password
@@ -59,8 +62,8 @@ const signUpMutation = gql`
 
 const SignUpWithData = graphql(signUpMutation, {
   props: ({ mutate }) => ({
-    signUp: ({ firstName, lastName, email, password }) => mutate({
-      variables: { firstName, lastName, email, password }
+    signUp: ({lastName, email, password }) => mutate({
+      variables: { lastName, email, password }
     }),
   }),
 })(withRouter(SignUpFormContainer));
