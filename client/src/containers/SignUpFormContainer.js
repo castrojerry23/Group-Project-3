@@ -44,9 +44,9 @@ class SignUpFormContainer extends React.Component {
 }
 
 const signUpMutation = gql`
-  mutation signUp($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
+  mutation signUp(
+    $lastName: String!, $email: String!, $password: String!) {
     signUp(
-      firstName: $firstName
       lastName: $lastName
       email: $email
       password: $password
@@ -62,8 +62,12 @@ const signUpMutation = gql`
 
 const SignUpWithData = graphql(signUpMutation, {
   props: ({ mutate }) => ({
-    signUp: ({ firstName, lastName, email, password }) => mutate({
-      variables: { firstName, lastName, email, password }
+    signUp: ({ 
+      // firstName, 
+      lastName, email, password }) => mutate({
+      variables: { 
+        // firstName, 
+        lastName, email, password }
     }),
   }),
 })(withRouter(SignUpFormContainer));

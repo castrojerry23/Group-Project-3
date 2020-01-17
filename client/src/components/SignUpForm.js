@@ -28,7 +28,7 @@ const SignUpForm = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       {errors}
-      <Field className="signuptext" name="firstName" type="text" component={renderField} label="First name" />
+      {/* <Field className="signuptext" name="firstName" type="text" component={renderField} label="First name" /> */}
       <Field name="lastName" type="text" component={renderField} label="Last name" />
       <Field name="email" type="email" component={renderField} label="Email" />
       <Field name="password" type="password" component={renderField} label="Password" />
@@ -40,9 +40,9 @@ const SignUpForm = (props) => {
 const validate = (values) => {
   const errors = {}
 
-  if (!values.firstName) {
-    errors.firstName = 'Required';
-  }
+  // if (!values.firstName) {
+  //   errors.firstName = 'Required';
+  // }
 
   if (!values.lastName) {
     errors.lastName = 'Required';
