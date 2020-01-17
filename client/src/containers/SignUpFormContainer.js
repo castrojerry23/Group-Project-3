@@ -7,6 +7,9 @@ import { connect } from 'react-redux';
 import SignUpForm from '../components/SignUpForm';
 import { signIn } from '../actions';
 
+import '../components/Components.css';
+
+
 class SignUpFormContainer extends React.Component {
   constructor(props) {
     super(props);

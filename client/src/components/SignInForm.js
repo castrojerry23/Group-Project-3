@@ -1,5 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import './Components.css';
+
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => {
   const hasError = (touched && error) ? 'has-danger' : '';

@@ -1,4 +1,6 @@
 import React from 'react';
+import './Components.css';
+
 
 export default (props) => {
   const users = props.data.users;

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import './Components.css';
+
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => {
   const hasError = (touched && error) ? 'has-danger' : '';
@@ -26,7 +28,7 @@ const SignUpForm = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       {errors}
-      <Field name="firstName" type="text" component={renderField} label="First name" />
+      <Field className="signuptext" name="firstName" type="text" component={renderField} label="First name" />
       <Field name="lastName" type="text" component={renderField} label="Last name" />
       <Field name="email" type="email" component={renderField} label="Email" />
       <Field name="password" type="password" component={renderField} label="Password" />
