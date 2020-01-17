@@ -93,7 +93,7 @@ class LandingPage extends Component {
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Title"
+                placeholder="Search for ..."
               />
               <FormBtn onClick={this.handleFormSubmit}>Search</FormBtn>
               </form>
@@ -112,7 +112,7 @@ class LandingPage extends Component {
                           <div className="col-md-10">
                               <h4>{movie.name}</h4>
                           </div>
-                          <div class="col-md-10">
+                          <div class="col-md-10" id="results2">
                               <img src={movie.picture} alt={movie.id} style={styles}></img>
                           </div>
                           {/* <div class="col-sm-1">
@@ -128,7 +128,7 @@ class LandingPage extends Component {
                         </div>
                       </div>
                       {movie.locations.map(location => (
-                        <div class="form-group row">
+                        <div class="form-group row" >
                             <div class="col-md-10">
                                 <img src={location.icon} alt={location.id}></img>
                             </div>
@@ -138,7 +138,7 @@ class LandingPage extends Component {
                   ))}
                 </List>
               ) : (
-                <h5>No Results to Display</h5>
+                <h5>Nothing yet</h5>
               )}
             </div>
           </div>

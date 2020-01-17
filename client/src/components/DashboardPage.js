@@ -1,4 +1,6 @@
 import React from 'react';
+import './Components.css';
+
 
 import './Components.css';
 
@@ -58,7 +60,7 @@ export default (props) => {
         </div>
       </div>
 
-      
+
     </div>
     
   )

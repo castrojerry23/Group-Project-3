@@ -4,6 +4,9 @@ import './Navbar.css';
 import $ from 'jquery'
 
 
+import './Components.css';
+
+
 export default (props) => {
   const logout = (e) => {
     e.preventDefault();
@@ -13,13 +16,17 @@ export default (props) => {
   const links = (
     (props.authenticated) ?
       <div>
+
         <div className="nav navbar-nav">
           <Link to="/" className="nav-link">Home</Link>
         </div>
+
         <div className="nav navbar-nav">
           <Link to="#" onClick={logout} className="nav-link">Logout</Link>
         </div>
+
       </div>
+
     :
         <div class="conatiner" className="nav navbar-nav">
           <ul>

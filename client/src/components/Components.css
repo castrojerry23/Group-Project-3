@@ -7,11 +7,13 @@ body {
 /* Landing page */
 
 #landingCard1 {
-    background-color: aquamarine;
+    background-color: rgb(0, 158, 163);
+
 }
 
 #landingCard2 {
-    background-color: rgb(207, 74, 21);
+    background-color: rgb(0, 158, 163);
+    text-align: left;
 }
 
 .appTitle {
