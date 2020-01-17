@@ -21,15 +21,19 @@ export default (props) => {
         </div>
       </div>
     :
-      <div>
-        <div className="nav navbar-nav">
-          <Link to="/" className="nav-link">Home</Link>
+        <div class="conatiner" className="nav navbar-nav">
+          <ul>
+            <li>
+              <Link to="/" className="nav-link">Home</Link>
+            </li>
+            <li>
+              <Link to="/signin" className="nav-link">Sign in</Link>
+            </li>
+            <li>
+              <Link to="/signup" className="nav-link">Sign up</Link>
+            </li>
+          </ul>
         </div>
-        <div className="nav navbar-nav">
-          <Link to="/signin" className="nav-link">Sign in</Link>
-          <Link to="/signup" className="nav-link">Sign up</Link>
-        </div>
-      </div>
     );
 
   return (
@@ -38,15 +42,11 @@ export default (props) => {
       <div id="lgMenu">
         <span id="exit">&times;</span>
           <ul>
-          <nav className="navbar navbar-light bg-faded mb-3">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">{links}</div>
-        </div>
+            <li>
+              <div>{links}</div>
+            </li>
+          </ul>
       </div>
-    </nav>
-    </ul>
-    </div>
     </div>
   );
 };
