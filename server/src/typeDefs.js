@@ -14,7 +14,6 @@ const typeDefs = [/* GraphQL */`
   # User type.
   type User {
     id: String!
-    firstName: String!
     lastName: String!
     email: String!
   }
@@ -27,7 +26,7 @@ const typeDefs = [/* GraphQL */`
 
   type Mutation {
     # Sign up.
-    signUp(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    signUp(astName: String!, email: String!, password: String!): Auth
 
     # Sign in.
     signIn(email: String!, password: String!): Auth

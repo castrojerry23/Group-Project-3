@@ -1,3 +1,9 @@
+body {
+    text-align: center;
+    background: url(../Images/backgroundimage1.jpg);
+
+}
+
 /* Landing page */
 
 #landingCard1 {
@@ -17,4 +23,26 @@
 
 .jumbotron {
     background: url(../Images/backgroundimage1.jpg);
+    margin-bottom: 50px;
+}
+
+.searchForm {
+    width: 400px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18pt;
+}
+
+.searchBar input{
+    width: 40vw;
+    display: inline-block;
+}
+
+#profilepage {
+    background: url(../Images/backgroundimage2.jpg);
+ 
+}
+
+#savedmovies {
+    background-color: #ed6859;
 }

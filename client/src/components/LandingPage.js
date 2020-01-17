@@ -83,12 +83,12 @@ class LandingPage extends Component {
         <Row>
         <Col size="md-12 sm-12">
           <Jumbotron>
-            <p className="appTitle">Welcome to Flix Finder</p>
+            <p className="appTitle">Flix Finder</p>
           </Jumbotron>
           <div className="card" id="landingCard1">
             <div className="card-body">
-              Search by Movie or TV Show Title
-              <form>
+            <p className="searchForm">Find some Flix: </p>
+              <form className="searchBar">
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
