@@ -9,10 +9,12 @@
 }
 
 .appTitle {
+    font-family: fantasy;
+    border-radius: 25px;
     font-size: 9em;
-    background-color: brown;
+    background: url(../Images/backgroundimage2.jpg);
 }
 
 .jumbotron {
-    background-color: bisque;
+    background: url(../Images/backgroundimage1.jpg);
 }
