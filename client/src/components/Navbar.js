@@ -18,25 +18,29 @@ export default (props) => {
       <div>
 
         <div className="nav navbar-nav">
-          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/landingpage" className="nav-link">Home</Link>
         </div>
 
         <div className="nav navbar-nav">
           <Link to="#" onClick={logout} className="nav-link">Logout</Link>
         </div>
 
+        <div className="nav navbar-nav">
+          <Link to="/dashboard" className="nav-link">Profile</Link>
+        </div>
+
       </div>
 
     :
-        <div class="conatiner" className="nav navbar-nav">
+        <div class="container" className="nav navbar-nav">
           <ul>
-            <li>
+            <li className="navbarHover">
               <Link to="/" className="nav-link">Home</Link>
             </li>
-            <li>
+            <li className="navbarHover">
               <Link to="/signin" className="nav-link">Sign in</Link>
             </li>
-            <li>
+            <li className="navbarHover">
               <Link to="/signup" className="nav-link">Sign up</Link>
             </li>
           </ul>
