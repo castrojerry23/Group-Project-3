@@ -9,7 +9,7 @@ export default {
         "headers":{
         "content-type":"application/octet-stream",
         "x-rapidapi-host":"utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
-        "x-rapidapi-key": "41ecccc96bmshd2778d685cb753dp15c5dejsn77c231b9d116"
+        "x-rapidapi-key": process.env.UTELLY_KEY,
         },"params":{
         "term":movie,
         "country":"us"
