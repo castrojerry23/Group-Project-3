@@ -44,7 +44,6 @@ const store = createStore(
       {}, // initial state
       compose(
           applyMiddleware(client.middleware()),
-          // If you are using the devToolsExtension, you can add it here also
           window.devToolsExtension ? window.devToolsExtension() : f => f,
       )
 );

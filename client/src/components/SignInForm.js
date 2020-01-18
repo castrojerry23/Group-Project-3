@@ -30,7 +30,7 @@ const SignInForm = (props) => {
       {errors}
       <Field name="email" type="email" component={renderField} label="Email" />
       <Field name="password" type="password" component={renderField} label="Password" />
-      <button type="submit" className="btn btn-primary">Sign in</button>
+      <button type="submit" className="btn">Sign in</button>
     </form>
   );
 }

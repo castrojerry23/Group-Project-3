@@ -19,10 +19,10 @@ body {
     border-radius: 25px;
 }
 
-ul li:hover {
+/* ul li:hover {
     background-color: #ed6859b7;
 
-}
+} */
 
 .appTitle {
     font-family: fantasy;
@@ -49,10 +49,22 @@ ul li:hover {
 }
 
 #profilepage {
-    background: url(../Images/backgroundimage2.jpg);
+    background-color: #ed6859;
+    border-radius: 25px;
+
  
 }
 
 #savedmovies {
     background-color: #ed6859;
+    border-radius: 25px;
+}
+
+.moviesTitle {
+    font-size: 2.5em;
+}
+
+.btn {
+    background-color: #ed6859;
+    color: black;
 }

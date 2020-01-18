@@ -34,13 +34,13 @@ export default (props) => {
     :
         <div class="container" className="nav navbar-nav">
           <ul>
-            <li>
+            <li className="navbarHover">
               <Link to="/" className="nav-link">Home</Link>
             </li>
-            <li>
+            <li className="navbarHover">
               <Link to="/signin" className="nav-link">Sign in</Link>
             </li>
-            <li>
+            <li className="navbarHover">
               <Link to="/signup" className="nav-link">Sign up</Link>
             </li>
           </ul>

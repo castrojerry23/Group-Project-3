@@ -2,8 +2,6 @@ import React from 'react';
 import './Components.css';
 
 
-import './Components.css';
-
 
 export default (props) => {
   const users = props.data.users;
@@ -46,7 +44,7 @@ export default (props) => {
         </div>
       </div>
 
-      <p>Saved Movies</p>
+      <p className="moviesTitle">Saved Movies</p>
 
       <div className="container" id="savedmovies">
         <div className="row">
