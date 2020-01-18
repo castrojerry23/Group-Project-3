@@ -18,7 +18,7 @@ export default (props) => {
       <div>
 
         <div className="nav navbar-nav">
-          <Link to="/landingpage" className="nav-link">Home</Link>
+          <Link to="/landingpage" onClick="navbar-collapse" className="nav-link">Home</Link>
         </div>
 
         <div className="nav navbar-nav">
@@ -26,7 +26,7 @@ export default (props) => {
         </div>
 
         <div className="nav navbar-nav">
-          <Link to="/dashboard" className="nav-link">Profile</Link>
+          <Link to="/dashboard" onClick="navbar-collapse" className="nav-link">Profile</Link>
         </div>
 
       </div>
@@ -35,13 +35,13 @@ export default (props) => {
         <div class="container" className="nav navbar-nav">
           <ul>
             <li className="navbarHover">
-              <Link to="/" className="nav-link">Home</Link>
+              <Link to="/" onClick="navbar-collapse" className="nav-link">Home</Link>
             </li>
             <li className="navbarHover">
-              <Link to="/signin" className="nav-link">Sign in</Link>
+              <Link to="/signin" onClick="navbar-collapse" className="nav-link">Sign in</Link>
             </li>
             <li className="navbarHover">
-              <Link to="/signup" className="nav-link">Sign up</Link>
+              <Link to="/signup" onClick="navbar-collapse" className="nav-link">Sign up</Link>
             </li>
           </ul>
         </div>
@@ -71,4 +71,10 @@ $(document).ready(function(){
     $("#lgMenu").removeClass("enter");
     $("#menu").css("opacity", "1");
     });
+});
+
+$(document).on('click','.navbar-collapse.in',function(e) {
+  if( $(e.target).is('li') ) {
+      $(this).collapse('hide');
+  }
 });
