@@ -15,6 +15,7 @@ import HomePageContainer from './containers/HomePageContainer';
 import SignUpPage from './components/SignUpPage';
 import SignInPage from './components/SignInPage';
 import DashboardPageContainer from './containers/DashboardPageContainer';
+import LandingPage from './components/LandingPage';
 
 const token = localStorage.getItem('token');
 const networkInterface = createNetworkInterface({ uri: 'http://localhost:4000/graphql' });
@@ -60,6 +61,7 @@ ReactDOM.render(
             <Route path="signup" component={SignUpPage} />
             <Route path="signin" component={SignInPage} />
             <Route path="dashboard" component={RequireAuth(DashboardPageContainer)} />
+            <Route path="landingpage" component={LandingPage} />
             <Route path="*" component={NoMatch} />
         </Route>
         </Router>
