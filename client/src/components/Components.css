@@ -7,14 +7,14 @@ body {
 /* Landing page */
 
 #landingCard1 {
-    background-color: #ed6859b7;
+    background-color: rgba(24, 207, 137, 0.692);
     border-radius: 25px;
 
 
 }
 
 #landingCard2 {
-    background-color: #ed6859b7;
+    background-color: rgba(24, 207, 137, 0.692);
     text-align: left;
     border-radius: 25px;
 }
@@ -34,6 +34,7 @@ body {
 .jumbotron {
     background: url(../Images/backgroundimage1.jpg);
     margin-bottom: 50px;
+    margin-top: -40px;
 }
 
 .searchForm {
@@ -49,14 +50,14 @@ body {
 }
 
 #profilepage {
-    background-color: #ed6859;
+    background-color: rgba(24, 207, 137, 0.692);
     border-radius: 25px;
 
  
 }
 
 #savedmovies {
-    background-color: #ed6859;
+    background-color: rgba(24, 207, 137, 0.692);
     border-radius: 25px;
 }
 
@@ -65,6 +66,14 @@ body {
 }
 
 .btn {
-    background-color: #ed6859;
+    background-color: rgb(24, 207, 137);
     color: black;
+}
+
+.signUp {
+    background: url(../Images/backgroundimage2.jpg);
+}
+
+.signIn {
+    background: url(../Images/backgroundimage2.jpg);
 }
