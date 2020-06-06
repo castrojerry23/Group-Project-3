@@ -11,7 +11,7 @@
     "supertest": "^2.0.1"
   },
   "dependencies": {
-    "apollo-server": "^0.3.3",
+    "apollo-server": "^2.14.2",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
